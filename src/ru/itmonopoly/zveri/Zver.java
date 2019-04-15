@@ -3,8 +3,9 @@ package ru.itmonopoly.zveri;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 
-public class Zver {
+public class Zver implements Serializable {
     String name;
     Zver parent;
     Boolean type; // true - zver; false - question
@@ -31,7 +32,7 @@ public class Zver {
         String answer;
         System.out.println("Оно " + this.name + "? (+/-)");
         answer = checkAnswer(br.readLine());
-            if (answer.equals("+")) {
+        if (answer.equals("+")) {
             if (this.yes.type) {
                 this.yes.end(z);
             } else {
@@ -54,7 +55,7 @@ public class Zver {
         if (answer.equals("+")) {
             System.out.println("Угадала!");
         } else {
-            if ((this.parent.no.type)&&!(this==this.parent.no)) {
+            if ((this.parent.no.type) && !(this == this.parent.no)) {
                 this.parent.no.end(z);
             } else {
                 System.out.println("Не угадала..."); //сюда пойдет метод добавления нового животного

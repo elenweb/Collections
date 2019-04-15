@@ -14,12 +14,12 @@ public class Main {
         root.yes.yes.no = new Zver("шакал", root.yes, true);
         root.no = new Zver("мяукает", root, false);
         root.no.no = new Zver("живет в норке", root.no, false);
-        root.no.no.yes = new Zver("мышка", root.no, true);
-        root.no.no.no = new Zver("лошадь", root.no, true);
+        root.no.no.yes = new Zver("мышка", root.no.no, true);
+        root.no.no.no = new Zver("лошадь", root.no.no, true);
         root.no.yes = new Zver("большое", root.no, false);
-        root.no.yes.yes = new Zver("лев", root.no, true);
-        root.no.yes.no = new Zver("кошка", root.no, true);
-        System.out.println("Задумайте животное");
+        root.no.yes.yes = new Zver("лев", root.no.yes, true);
+        root.no.yes.no = new Zver("кошка", root.no.yes, true);
+         System.out.println("Задумайте животное");
         try {
             root.game(root);
         } catch (IOException e) {
